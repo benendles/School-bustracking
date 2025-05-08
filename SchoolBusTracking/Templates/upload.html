@@ -15,8 +15,9 @@
     </header>
     <div class="container">
         <form method="POST" enctype="multipart/form-data">
-            <label for="file">Choose a CSV file:</label>
-            <input type="file" id="file" name="file" accept=".csv" required>
+            {% csrf_token %}
+            <label for="file">Choose an image file:</label>
+            <input type="file" id="file" name="image"  required>
             <button type="submit">Upload</button>
         </form>
 
