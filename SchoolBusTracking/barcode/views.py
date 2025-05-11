@@ -1,7 +1,7 @@
 import pytesseract
 from PIL import Image
 from django.shortcuts import  render,redirect
-from  .models import Extractedimage
+from  .models import Extractedimage 
 from .forms import ExtractedimageForm
 pytesseract.pytesseract.tesseract_cmd = '/opt/anaconda3/envs/tesseract-env/bin/tesseract'
 def upload_and_extract(request):
@@ -30,6 +30,7 @@ def upload_and_extract(request):
 def result_view(request, pk):
     image_entry = Extractedimage.objects.get(pk=pk)
     return render(request, 'result.html', {'image_entry': image_entry})
+
 
 
 
